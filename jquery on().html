@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery on() Method</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("button").on("click", {name: "John", age: 30}, function(event) {
+				alert("Name: " + event.data.name + ", Age: " + event.data.age);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>jQuery on() Method</h1>
+	
+	<button>Click Me</button>
+	<button>Click Me Too</button>
+	<button>Click Me Three</button>
+</body>
+</html>

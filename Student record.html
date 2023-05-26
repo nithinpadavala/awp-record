@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Record Form</title>
+	<script>
+		// JavaScript validation function
+		function validateForm() {
+			var name = document.forms["studentForm"]["name"].value;
+			var roll = document.forms["studentForm"]["roll"].value;
+			var age = document.forms["studentForm"]["age"].value;
+			var email = document.forms["studentForm"]["email"].value;
+			
+			// Check for empty fields
+			if (name == "" || roll == "" || age == "" || email == "") {
+				alert("Please fill out all fields");
+				return false;
+			}
+			
+			// Check age is a number
+			if (isNaN(age)) {
+				alert("Age must be a number");
+				return false;
+			}
+			
+			// Check email format
+			if (!validateEmail(email)) {
+				alert("Please enter a valid email address");
+				return false;
+			}
+		}
+		
+		// Function to validate email format
+		function validateEmail(email) {
+			var re = /\S+@\S+\.\S+/;
+			return re.test(email);
+		}
+	</script>
+</head>
+<body>
+	<h1>Student Record Form</h1>
+	
+	<form name="studentForm" onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" name="name"><br>
+		
+		<label for="roll">Roll Number:</label>
+		<input type="text" name="roll"><br>
+		
+		<label for="age">Age:</label>
+		<input type="text" name="age"><br>
+		
+		<label for="email">Email:</label>
+		<input type="text" name="email"><br>
+		
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

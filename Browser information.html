@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browser Information</title>
+	<script>
+		function displayBrowserInfo() {
+			var browserInfo = "Browser CodeName: " + navigator.appCodeName + "\n";
+			browserInfo += "Browser Name: " + navigator.appName + "\n";
+			browserInfo += "Browser Version: " + navigator.appVersion + "\n";
+			browserInfo += "Cookies Enabled: " + navigator.cookieEnabled + "\n";
+			browserInfo += "Browser Language: " + navigator.language + "\n";
+			browserInfo += "Platform: " + navigator.platform + "\n";
+			browserInfo += "User-agent header: " + navigator.userAgent + "\n";
+			alert(browserInfo);
+		}
+	</script>
+</head>
+<body>
+	<h1>Browser Information</h1>
+	
+	<button onclick="displayBrowserInfo()">Click to Display Browser Info</button>
+</body>
+</html>

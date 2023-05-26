@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Click Timer</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var startTime;
+			var endTime;
+			var duration;
+
+			$("p").click(function(event) {
+				if (!startTime) {
+					startTime = new Date();
+				} else if (!endTime) {
+					endTime = new Date();
+					duration = endTime.getTime() - startTime.getTime();
+					alert("Time elapsed: " + duration + " ms");
+					startTime = null;
+					endTime = null;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>jQuery Click Timer</h1>
+	
+	<p>Click Me Twice to Measure Time</p>
+</body>
+</html>
